@@ -13,7 +13,7 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say('So you want to learn about Esther? Just say HELLO to get started.')
+            return bot.say('Hallo vom Apfelbot. Oder Eimerbot. Oder Apfeleimerbot...')
                 .then(() => 'speak');
         }
     },
@@ -25,9 +25,9 @@ module.exports = new Script({
 
             function updateSilent() {
                 switch (upperText) {
-                    case "CONNECT ME":
+                    case "STOP":
                         return bot.setProp("silent", true);
-                    case "DISCONNECT":
+                    case "START":
                         return bot.setProp("silent", false);
                     default:
                         return Promise.resolve();
@@ -44,7 +44,7 @@ module.exports = new Script({
                 }
 
                 if (!_.has(scriptRules, upperText)) {
-                    return bot.say(`I didn't understand that.`).then(() => 'speak');
+                    return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
                 }
 
                 var response = scriptRules[upperText];
