@@ -3,7 +3,8 @@
 const _ = require('lodash');
 const Script = require('smooch-bot').Script;
 
-const scriptRules = require('./script.json');
+//const scriptRules = require('./script.json');
+var scriptRules = require('./script.json');
 
 module.exports = new Script({
     processing: {
@@ -46,6 +47,9 @@ module.exports = new Script({
                 if (!_.has(scriptRules, upperText)) {
                     return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
                 }
+
+                //var request = require('request');
+                //var requrl = request('')
 
                 var response = scriptRules[upperText];
                 var lines = response.split(/(<img src=\'[^>]*\'\/>)/);
