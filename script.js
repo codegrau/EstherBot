@@ -39,13 +39,18 @@ module.exports = new Script({
                 return bot.getProp("silent");
             }
 
+            function getNews() {
+                switch (upperText) {
+                    case "NEWS":
+                        return Promise.resolve(bot.say('TESTER'));
+                    default:
+                        return Promise.resolve();
+                }
+            }
+
             function processMessage(isSilent) {
                 if (isSilent) {
                     return Promise.resolve("speak");
-                }
-
-                if (_.has('NEWS')) {
-                    return bot.say("HAU");
                 }
 
                 if (!_.has(scriptRules, upperText)) {
@@ -79,6 +84,7 @@ module.exports = new Script({
             }
 
             return updateSilent()
+                .then(getNews)
                 .then(getSilent)
                 .then(processMessage);
         }
