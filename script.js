@@ -30,8 +30,6 @@ module.exports = new Script({
                         return bot.setProp("silent", true);
                     case "START":
                         return bot.setProp("silent", false);
-                    case "TTT":
-                        return bot.say("huch");
                     default:
                         return Promise.resolve();
                 }
@@ -39,12 +37,15 @@ module.exports = new Script({
 
             function getSilent() {
                 return bot.getProp("silent");
-                
             }
 
             function processMessage(isSilent) {
                 if (isSilent) {
                     return Promise.resolve("speak");
+                }
+
+                if (_.has('NEWS')) {
+                    return bot.say("HAU");
                 }
 
                 if (!_.has(scriptRules, upperText)) {
