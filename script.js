@@ -39,11 +39,13 @@ module.exports = new Script({
                 return bot.getProp("silent");
             }
 
-            function getNews() {
+            function getNews(anzahlNews) {
                 var request = require('request');
-                request({ url: 'https://apfeleimer.de/api/get_recent_posts/?count=2', json:true }, function (error, response, body) {
+                request({ url: 'https://apfeleimer.de/api/get_recent_posts/?count=' + anzahlNews, json:true }, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    return bot.say ("%[" + body.posts[1].title + "](" + body.posts[1].url + ")" )// Show the HTML for the Google homepage.
+                        for (var k in body.posts) {
+                            bot.say ("%[" + body.posts[k].title + "](" + body.posts[k].url + ")" )
+                        }
                     }
                     })
             }
@@ -55,7 +57,7 @@ module.exports = new Script({
 
                 switch (upperText) {
                   case "NEWS": 
-                    return getNews() //.then(() => 'speak');
+                    return getNews(5) //.then(() => 'speak');
                 default: 
                     if (!_.has(scriptRules, upperText)) {
                         return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
