@@ -43,7 +43,7 @@ module.exports = new Script({
                 var request = require('request');
                 request({ url: 'https://apfeleimer.de/api/get_recent_posts/?count=1', json:true }, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    return body.posts[0].url // Show the HTML for the Google homepage.
+                    return bot.say(body.posts[0].url) // Show the HTML for the Google homepage.
                     }
                     })
             }
@@ -55,7 +55,7 @@ module.exports = new Script({
 
                 switch (upperText) {
                   case "NEWS": 
-                    return bot.say( getNews() ).then(() => 'speak');
+                    return getNews() .then(() => 'speak');
                 default: 
                     if (!_.has(scriptRules, upperText)) {
                         return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
