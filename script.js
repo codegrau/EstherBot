@@ -44,7 +44,7 @@ module.exports = new Script({
                     case "NEWS":
                         return Promise.resolve(bot.say('TESTER'));
                     default:
-                        return Promise.resolve();
+                        .then(() =>'speak');
                 }
             }
 
@@ -84,8 +84,8 @@ module.exports = new Script({
             }
 
             return updateSilent()
-                .then(getNews)
                 .then(getSilent)
+                                .then(getNews)
                 .then(processMessage);
         }
     }
