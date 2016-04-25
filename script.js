@@ -43,7 +43,7 @@ module.exports = new Script({
                 var request = require('request');
                 request({ url: 'https://apfeleimer.de/api/get_recent_posts/?count=1', json:true }, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    console.log(body) // Show the HTML for the Google homepage.
+                    console.log(body.posts[0].url + " " + body.posts[0].title) // Show the HTML for the Google homepage.
                     }
                     })
             }
