@@ -43,11 +43,9 @@ module.exports = new Script({
                 var request = require('request');
                 request({ url: 'https://apfeleimer.de/api/get_recent_posts/?count=' + anzahlNews, json:true }, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                        var antwortNews = "";
                         for (var k=1; k < anzahlNews; k++) {
-                            antwortNews += (body.posts[k].title + "%[Hier lesen](" + body.posts[k].url + ")" )
+                            bot.say(body.posts[k].title + " %[Hier lesen](" + body.posts[k].url + ")" )
                         }
-                        bot.say(antwortNews);
                     }
                     })
             }
