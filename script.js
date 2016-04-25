@@ -55,7 +55,7 @@ module.exports = new Script({
 
                 switch (upperText) {
                   case "NEWS": 
-                    return getNews() .then(() => 'speak');
+                    return getNews().then(() => 'speak');
                 default: 
                     if (!_.has(scriptRules, upperText)) {
                         return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
