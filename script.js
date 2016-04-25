@@ -32,7 +32,6 @@ module.exports = new Script({
                         return bot.setProp("silent", false);
                     case "TTT":
                         return bot.say("huch");
-        
                     default:
                         return Promise.resolve();
                 }
@@ -40,14 +39,13 @@ module.exports = new Script({
 
             function getSilent() {
                 return bot.getProp("silent");
+                
             }
 
             function processMessage(isSilent) {
                 if (isSilent) {
                     return Promise.resolve("speak");
                 }
-
-                if 
 
                 if (!_.has(scriptRules, upperText)) {
                     return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
