@@ -44,14 +44,14 @@ module.exports = new Script({
                     return Promise.resolve("speak");
                 }
 
-                //switch (upperText) {
-                //  case "NEWS": 
-                //  return bot.say('HUAH');
-                // default: 
-                if (!_.has(scriptRules, upperText)) {
+                switch (upperText) {
+                  case "NEWS": 
+                  return bot.say("HUAH");
+                 default: 
+                    if (!_.has(scriptRules, upperText)) {
                    return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
                    }
-                //}
+                }
 
                 //var request = require('request');
                 //var requrl = request('')
