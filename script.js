@@ -32,6 +32,7 @@ module.exports = new Script({
                         return bot.setProp("silent", false);
                     case "TTT":
                         return bot.say("huch");
+        
                     default:
                         return Promise.resolve();
                 }
