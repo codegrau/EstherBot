@@ -53,8 +53,12 @@ module.exports = new Script({
                     return Promise.resolve("speak");
                 }
 
-                if (!_.has(scriptRules, upperText)) {
-                    return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
+                if upperText = "NEWS" {
+                    return bot.say('HUAH');
+                } else {
+                        if (!_.has(scriptRules, upperText)) {
+                        return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
+                    }
                 }
 
                 //var request = require('request');
@@ -85,7 +89,6 @@ module.exports = new Script({
 
             return updateSilent()
                 .then(getSilent)
-                                .then(getNews)
                 .then(processMessage);
         }
     }
