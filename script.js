@@ -30,6 +30,23 @@ module.exports = new Script({
                         return bot.setProp("silent", true);
                     case "START":
                         return bot.setProp("silent", false);
+                    case "NEWS":
+                        {
+                        var request = require('request');
+                        var requrl = request('https://apfeleimer.de/api/get_recent_posts/?count=1');
+
+                        request({
+                            url: requrl,
+                            json: true
+                            }, function (error, response, body) {
+
+                                if (!error && response.statusCode === 200) {
+                                return bot.say(body);
+                                }
+                            })
+
+
+                        }
                     default:
                         return Promise.resolve();
                 }
