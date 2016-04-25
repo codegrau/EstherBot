@@ -50,7 +50,7 @@ module.exports = new Script({
                     var requrl = "https://apfeleimer.de/api/get_recent_posts/?count=1";
 
                     request({
-                            url: url,
+                            url: requrl,
                             json: true
                         }, function (error, response, body) {
                             if (!error && response.statusCode === 200) {
