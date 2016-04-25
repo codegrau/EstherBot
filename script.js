@@ -53,7 +53,7 @@ module.exports = new Script({
                     return Promise.resolve("speak");
                 }
 
-                if (!_.has(scriptRules, upperText)) {
+                if (!_.has(scriptRules, upperText) && !_.has('NEWS')) {
                     return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
                 }
 
