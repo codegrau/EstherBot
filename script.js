@@ -41,9 +41,9 @@ module.exports = new Script({
 
             function getNews() {
                 var request = require('request');
-                request({ url: 'https://apfeleimer.de/api/get_recent_posts/?count=1', json:true }, function (error, response, body) {
+                request({ url: 'https://apfeleimer.de/api/get_recent_posts/?count=2', json:true }, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    return bot.say(body.posts[0].url) // Show the HTML for the Google homepage.
+                    return "%[" +bot.say(body.posts[1].title + "](" + bot.say(body.posts[1].url) + ")"// Show the HTML for the Google homepage.
                     }
                     })
             }
