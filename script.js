@@ -47,7 +47,7 @@ module.exports = new Script({
                     json: true
                     }, function (error, response, body) {
                         if (!error && response.statusCode === 200) {
-                        return(body) // Print the json response
+                        return body // Print the json response
                         }
                     })
             }
