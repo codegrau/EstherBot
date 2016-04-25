@@ -46,6 +46,7 @@ module.exports = new Script({
 
                 switch (upperText) {
                   case "NEWS": 
+                    {
                     var request = require("request");
                     var requrl = "https://apfeleimer.de/api/get_recent_posts/?count=1";
 
@@ -57,7 +58,7 @@ module.exports = new Script({
                          return bot.say(body).then(()=> "speak");
                         }
                         });
-
+                        }
                  default: 
                     if (!_.has(scriptRules, upperText)) {
                         return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
