@@ -39,15 +39,6 @@ module.exports = new Script({
                 return bot.getProp("silent");
             }
 
-            function getNews() {
-                switch (upperText) {
-                    case "NEWS":
-                        return Promise.resolve(bot.say('TESTER'));
-                    default:
-                        .then(() =>'speak');
-                }
-            }
-
             function processMessage(isSilent) {
                 if (isSilent) {
                     return Promise.resolve("speak");
@@ -57,9 +48,9 @@ module.exports = new Script({
                 //  case "NEWS": 
                 //  return bot.say('HUAH');
                 // default: 
-                        if (!_.has(scriptRules, upperText)) {
-                        return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
-                        }
+                if (!_.has(scriptRules, upperText)) {
+                   return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
+                   }
                 //}
 
                 //var request = require('request');
