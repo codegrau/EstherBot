@@ -7,7 +7,7 @@ const Script = require('smooch-bot').Script;
 var scriptRules = require('./script.json');
 
 var keineAhnung = [
-    'Huch, das habe ich jetzt wirklich nicht verstanden. Versuchs doch mal mit Hilfe',
+    'Huch, das habe ich jetzt wirklich nicht verstanden. Versuchs doch mal mit HILFE',
     'Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden. HILFE hilft...',
     'Vertippt? Oder bin ich einfach zu doof? Probier mal HILFE ...'
     ];
