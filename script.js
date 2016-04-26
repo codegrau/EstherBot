@@ -30,7 +30,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say('${name} - kann ich mir hoffentlich merken?'))
+                .then(() => bot.say(`${name} - kann ich mir hoffentlich merken?`))
                 .then(() => 'speak');
         }
     },
@@ -53,6 +53,10 @@ module.exports = new Script({
 
             function getSilent() {
                 return bot.getProp("silent");
+            }
+
+            function getName() {
+                return bot.getProp("name");
             }
 
             function getNews(anzahlNews) {
@@ -109,6 +113,7 @@ module.exports = new Script({
 
             return updateSilent()
                 .then(getSilent)
+                .then(getName)
                 .then(processMessage);
         }
     }
