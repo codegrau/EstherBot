@@ -21,7 +21,7 @@ module.exports = new Script({
     start: {
         receive: (bot) => {
             return bot.say('Hallo vom Apfelbot. Oder Eimerbot. Oder Apfeleimerbot...')
-                .then(() => 'askName');
+                .then(() => 'speak');
         }
     },
 
@@ -55,9 +55,9 @@ module.exports = new Script({
                 return bot.getProp("silent");
             }
 
-            function getName() {
-                return bot.getProp("name");
-            }
+            //function getName() {
+            //   return bot.getProp("name");
+            //}
 
             function getNews(anzahlNews) {
                 var request = require('request');
@@ -113,7 +113,6 @@ module.exports = new Script({
 
             return updateSilent()
                 .then(getSilent)
-//                .then(getName)
                 .then(processMessage);
         }
     }
