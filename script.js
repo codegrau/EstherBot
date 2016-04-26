@@ -6,6 +6,12 @@ const Script = require('smooch-bot').Script;
 //const scriptRules = require('./script.json');
 var scriptRules = require('./script.json');
 
+var keineAhnung = [
+    'Huch, das habe ich jetzt wirklich nicht verstanden. Versuchs doch mal mit Hilfe',
+    'Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden. HILFE hilft...',
+    'Vertippt? Oder bin ich einfach zu doof? Probier mal HILFE ...'
+    ];
+
 module.exports = new Script({
     processing: {
         //prompt: (bot) => bot.say('Beep boop...'),
@@ -60,7 +66,8 @@ module.exports = new Script({
                     return getNews(5) //.then(() => 'speak');
                 default: 
                     if (!_.has(scriptRules, upperText)) {
-                        return bot.say(`Sorry, leider bin ich noch lange nicht so schlau wie Siri und hab das nicht verstanden.`).then(() => 'speak');
+                        var randomElement = _.sample(keineAhnung);
+                        return bot.say(randomElement).then(() => 'speak');
                    }
                 }
 
