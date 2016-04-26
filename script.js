@@ -56,7 +56,7 @@ module.exports = new Script({
             }
 
             function getName() {
-                return bot.getProp("name");
+                return bot.getProp('name',name);
             }
 
             function getNews(anzahlNews) {
