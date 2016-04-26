@@ -1,10 +1,10 @@
 {
-    "HALLO": "Auch an Dich ein dickes Hallo, ${name}...",
-    "HILFE": "Ich lerne stets dazu, ${name}: NEWS zeigt Dir z.B. die letzten apfeleimer Nachrichten an. Mit STOP höre ich Dir nicht mehr zu, mit START lausche ich Deinem Wort...",
-    "I LOVE YOU": "Hui! I love you too, ${name}!",
+    "HALLO": "Auch an Dich ein dickes Hallo...",
+    "HILFE": "Ich lerne stets dazu: NEWS zeigt Dir z.B. die letzten apfeleimer Nachrichten an. Mit STOP höre ich Dir nicht mehr zu, mit START lausche ich Deinem Wort...",
+    "I LOVE YOU": "Hui! I love you too!",
     "STOP": "Jetzt bin ich still... Wenn ich wieder auf Dich hören soll, tippe START",
-    "START": "TADAAA... hier bin in wieder, ${name}",
+    "START": "TADAAA... hier bin in wieder",
     "HOLLA" : "Was gibt's denn?",
-    "THOMAS": "Das bin ich, und Du bist ${name}",
+    "THOMAS": "Das bin ich, und Du bist",
     "TARZAN": "%[Button label here](http://anyurl.com)"
 }

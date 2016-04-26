@@ -96,7 +96,7 @@ module.exports = new Script({
                     line = line.trim();
                     if (!line.startsWith("<")) {
                         p = p.then(function() {
-                            return bot.getProp('name') .then((name) => bot.say(line));
+                            return bot.say(line);
                         });
                     } else {
                         // p = p.then(function() {
@@ -113,7 +113,7 @@ module.exports = new Script({
 
             return updateSilent()
                 .then(getSilent)
-                //.then(getName)
+                .then(getName)
                 .then(processMessage);
         }
     }
