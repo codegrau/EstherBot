@@ -113,7 +113,7 @@ module.exports = new Script({
 
             return updateSilent()
                 .then(getSilent)
-                .then(getName)
+//                .then(getName)
                 .then(processMessage);
         }
     }
