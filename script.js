@@ -21,6 +21,16 @@ module.exports = new Script({
     start: {
         receive: (bot) => {
             return bot.say('Hallo vom Apfelbot. Oder Eimerbot. Oder Apfeleimerbot...')
+                .then(() => 'askName');
+        }
+    },
+
+    askName: {
+        prompt: (bot) => bot.say('Wie heisst Du denn?'),
+        receive: (bot, message) => {
+            const name = message.text;
+            return bot.setProp('name', name)
+                .then(() => bot.say('${name} - kann ich mir hoffentlich merken?'))
                 .then(() => 'speak');
         }
     },
