@@ -12,6 +12,18 @@ var keineAhnung = [
     'Vertippt? Oder bin ich einfach zu doof? Probier mal HILFE ...'
     ];
 
+var FeedSub = require('feedsub');
+var reader = new FeedSub('https://apfeleimer.de/feed', {
+  interval: 10 // check feed every 10 minutes
+});
+
+reader.on('item', function(item) {
+  console.log('Got item!');
+  console.dir(item);
+});
+
+reader.start();
+
 module.exports = new Script({
     processing: {
         //prompt: (bot) => bot.say('Beep boop...'),

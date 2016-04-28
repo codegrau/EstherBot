@@ -1,8 +1,8 @@
 {
-  "name": "Esther Bot",
-  "description": "Esther, bot.",
-  "keywords": ["esther", "bot", "express"],
-  "website": "https://estherbot.com",
+  "name": "apfeleimer bot",
+  "description": "apfeleimer, bot.",
+  "keywords": ["apfeleimer", "bot", "express"],
+  "website": "https://apfeleimer.de",
   "repository": "https://github.com/esthercrawford/smooch-bot-example",
   "logo": "http://www.estherbot.com/wp-content/uploads/2016/03/EstherBot-photo.png",
   "env": {
